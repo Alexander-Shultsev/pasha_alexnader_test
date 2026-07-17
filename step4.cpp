@@ -22,13 +22,15 @@ int main() {
     // Мы просим память под (pointNum * 4 байта) и приводим результат к указателю (int32_t*)
     int32_t* altitudes = (int32_t*)malloc(pointNum * sizeof(int32_t));
     int32_t* longtitude = (int32_t*)malloc(pointNum * sizeof(int32_t));
+    
+    // широта 
 
     // 2. ПРОВЕРКА ОБЕИХ ОБЛАСТЕЙ ПАМЯТИ (Защита от сбоя)
-    if (altitudes == NULL || longtitudes == NULL) {
+    if (altitudes == NULL || longtitude == NULL) {
         cout << "Критическая ошибка: не удалось выделить память под миссию!" << endl;
         // Если первый успел выделиться, а второй нет - нужно очистить первый перед выходом!
         if (altitudes != NULL) free(altitudes);
-        if (longtitudes != NULL) free(longtitudes);
+        if (longtitude != NULL) free(longtitude);
         return -1;
     }
 
@@ -40,12 +42,16 @@ int main() {
     // Выводим сгенерированную миссию на экран
     cout << "\n--- Сгенерированный профиль высот ---" << endl;
     for (int i = 0; i < pointNum; i++) {
-        cout << "Точка #" << (i + 1) << altitudes[i] << << endl;
+        cout << "Точка #" << (i + 1) << altitudes[i] << endl;
     }
+
+    // цикл
 
     // 3. ОСВОБОЖДЕНИЕ ПАМЯТИ (Обязательно!)
     free(altitudes);
     altitudes = NULL; // Хороший тон: обнулить указатель после освобождения
+
+    // освобождение памяти
 
     cout << "\nПамять успешно очищена. Миссия завершена." << endl;
     return 0;
