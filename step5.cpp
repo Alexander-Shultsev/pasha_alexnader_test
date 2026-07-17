@@ -15,8 +15,17 @@ int main() {
 
     char serverResponse[] = "INFO:OK&ID=2026&$FlightMission Takeoff_50&Waypoint_100#";
 
+    char altitude[] = "Высота равна 150 метрам";
+    char longtitude[] = "Долгота равна 30 метрам";
+    char latitude[] = "Широта равна 20 метров";
+
+    cout << altitude << endl;
+    cout << longtitude << endl;
+    cout << latitude << endl;
+
     char* id = strstr(serverResponse, "ID=");
     char* flightMission = strstr(serverResponse, "$FlightMission ");
+    char* takeoff = strstr(serverResponse, "Takeoff_");
     
 
     if (id == NULL) { 
@@ -30,8 +39,16 @@ int main() {
     } else {
         cout << "Значение, начиная с указателя: " << flightMission << endl << endl;
         char* commandsOnly = flightMission + strlen("$FlightMission ");
-        cout << "Только команды " << commandsOnly;
+        cout << "Только команды " << commandsOnly << endl;
 
+    }
+
+    if (takeoff == NULL) { 
+        cout << "Данные взлета не найдены";
+    } else {
+        cout << "Данные взлета: " << takeoff << endl << endl;
+        char* pasha = takeoff + strlen("$Takeoff_50");
+        cout << "Данные взлета без взлета: " << pasha << endl << endl;
     }
 
     return 0;
