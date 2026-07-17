@@ -6,6 +6,8 @@
 #include <cstdio>
 #include <format>
 
+// Строки
+
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);

@@ -4,6 +4,8 @@
 #include <cctype>
 #include <algorithm>
 
+// Условия и циклы
+
 int ifWhile() {
     using namespace std;
 
@@ -27,10 +29,13 @@ int ifWhile() {
         // Обработка команд через switch/case
         switch (command) {
             case 'a': // Поддержка маленькой буквы
-                if (!isArmed) {
+                if (!isArmed)
+                {
                     isArmed = true;
                     cout << ">> Внимание! Моторы запущены (ARMED)." << endl;
-                } else {
+                }
+                else
+                {
                     cout << ">> Ошибка: Моторы уже запущены!" << endl;
                 }
                 break;
@@ -45,6 +50,12 @@ int ifWhile() {
                     cout << ">> Дрон уже в воздухе!" << endl;
                 }
                 break;
+
+            // 1. Если моторы запущены
+            // 2. Если высота больше 0
+            // 3. Взлёт + 25 метров
+            // Если моторы не запущены - предупреждение
+            // Если высота равна 0 - дрон не взлетел
 
             case 'l':
                 if (altitude > 0) {

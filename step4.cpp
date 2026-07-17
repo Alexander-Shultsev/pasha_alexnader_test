@@ -3,6 +3,8 @@
 #include <cstdlib>  // Библиотека, в которой живут malloc и free
 #include <windows.h>
 
+// Массивы
+
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);

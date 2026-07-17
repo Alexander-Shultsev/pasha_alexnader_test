@@ -2,6 +2,8 @@
 #include <cstdint>
 #include <windows.h>
 
+// Типы данных, ввод вывод
+
 int trainProgram() {
     using namespace std;
     
@@ -23,15 +25,17 @@ int trainProgram() {
 }
 
 int main() {
+    using namespace std;
+
     // 1. Объявление переменных (типы из вашего полетного контроллера)
     uint32_t commandNum = 15;        // Количество команд (только > 0)
-    int32_t altitude = -50;          // Высота (может быть отрицательной относительно точки старта)
+    int32_t altitude = 50;          // Высота (может быть отрицательной относительно точки старта)
     float delayTime = 1.5f;          // Число с плавающей точкой (секунды задержки)
     bool isKillSwitchActive = false; // Логический тип: true (1) или false (0)
     char stopSymbol = '#';           // Одиночный символ в одинарных кавычках
 
     // 2. Вывод данных в консоль с помощью std::cout
-    std::cout << "--- Статус контроллера ---" << std::endl;
+    cout << "--- Статус контроллера ---" << endl;
     std::cout << "Количество команд: " << commandNum << std::endl;
     std::cout << "Текущая высота: " << altitude << " метров" << std::endl;
     std::cout << "Символ окончания миссии: " << stopSymbol << std::endl;
@@ -44,6 +48,14 @@ int main() {
     std::cout << "Введите новое количество команд: ";
     std::cin >> commandNum;
     std::cout << "Система приняла " << commandNum << " команд(ы)." << std::endl;
+
+    std::cout << "Введите статус killSwitch ";
+    std::cin >> isKillSwitchActive;
+    std::cout << "Новый статус: " << isKillSwitchActive << std::endl;
+
+    std::cout << "Введите стоп символ ";
+    std::cin >> stopSymbol;
+    std::cout << "Новый стоп символ " << isKillSwitchActive << std::endl;
 
     trainProgram();
 

@@ -2,6 +2,8 @@
 #include <windows.h>
 #include <cstdint>
 
+// Функции
+
 void testValue(int32_t f) {
     f -= 30;
 }
