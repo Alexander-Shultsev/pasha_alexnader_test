@@ -4,6 +4,10 @@
 
 // Функции
 
+float sum(uint8_t one, uint8_t two) {
+    return one + two * 8 / 5;
+}
+
 void testValue(int32_t f) {
     f -= 30;
 }
@@ -23,6 +27,8 @@ int function() {
     testReference(fuel);
     cout << "fuel - " << fuel << endl;
 
+    float newValue = sum(4, 7);
+    cout << "Новое значение " << newValue << endl;
 
     return 0;
 }
