@@ -61,7 +61,7 @@ int ifWhile() {
 
             case 'u':
                 if (isArmed && altitude != 0) {
-                    altitude = altitude + 25;
+                    altitude += 25;
                     cout << ">> Высота увеличина на 25." << endl;
                     cout << altitude << endl;
                 } else if (!isArmed) {
